@@ -1,4 +1,3 @@
----
 name: Build game
 
 on: [ push, pull_request, workflow_dispatch ]
@@ -6,7 +5,7 @@ on: [ push, pull_request, workflow_dispatch ]
 jobs:
   build-msvc:
     name: Windows build
-    runs-on: windows-2019
+    runs-on: windows-2022
     env:
       BUILD_TOOLS_PATH: C:\apps\build-tools\
       CONAN_USER_HOME_SHORT: None
@@ -48,7 +47,6 @@ jobs:
         with:
           name: Windows
           path: bin/Release/
-          
 
       - name: Clean Conan pkgs
         run: conan cache clean "*" -sbd
